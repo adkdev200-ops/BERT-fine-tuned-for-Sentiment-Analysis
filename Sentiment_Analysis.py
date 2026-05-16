@@ -87,7 +87,7 @@ if __name__ == "__main__":
   for p in sentiment_model.parameters():
     p.requires_grad = False
 
-  sentiment_model.linear1  = sentiment_model.classifier.requires_grad_(True)
+  sentiment_model.classifier  = sentiment_model.classifier.requires_grad_(True)
   epochs = 10
 
   loss_fn = nn.CrossEntropyLoss()
